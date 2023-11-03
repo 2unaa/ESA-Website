@@ -5,15 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESA Map</title>
     <link rel="stylesheet" type="text/css" href="/css/map.css">
+    <script src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyBpjOmBnLrw3wnqVWvpnROPvQp3MSGYXgE&libraries=places&callback=initMap" async></script>
 </head>
 <body>
     <h1>Adopting or buying your animal support pet.</h1>
 
-    <div class="container">
-        <p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3341.0549979970083!2d-117.16179322589201!3d33.13391966566394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80db8ab2e67f1469%3A0x9f6d66547a073670!2sCSUSM!5e0!3m2!1sen!2sus!4v1698863358780!5m2!1sen!2sus" 
-            width="1500" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </p>
-    </div>
+    <h2>Enter an Address:
+    <input type="text" id="addressInput" placeholder="333 S Twin Oaks Valley Rd" autocomplete="on">
+        <button onclick="geocodeAddress()">Submit</button> 
+        </h2>
+
+        <div id ="map">  
+
+            <script>
+            var map;
+            var geocoder; 
+                // Initialize and add the map 
+                function initMap() { 
+                    map = new google.maps.Map(document.getElementById('map'), { 
+                        zoom: 20,
+                        center: {lat: 33.131710, lng: -117.164589 },
+                    }); 
+                    geocoder = new google.maps.Geocoder();
+                    var input = document.getElementById('addressInput');
+                    var autocomplete = new google.maps.places.Autocomplete(input);
+                    input.addEventListener('click', geocodeAddress);
+                }
+
+                function geocodeAddress(){
+                    var address = document.getElementById('addressInput').value;
+                    geocoder.geocode({'address' :address}, function(results, status){
+                        if(status === 'OK'){
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        });
+                    }
+                    else{
+                        alert('Address was not found');
+                    }
+                });
+                }
+            </script> 
+        </div>
 </body>
 </html>

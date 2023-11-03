@@ -3,16 +3,14 @@ h1{
     text-align: center;
 }
 
-.container{
-    width: 100%;
-    height: 100vh;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+h2{
+    color:#005b96;
+    text-align: center;
 }
 
-iframe{
+#map{
+    height: 600px; 
     width: 1500px;
-    height: 600px;
+    margin-left:auto; 
+    margin-right:auto;
 }
