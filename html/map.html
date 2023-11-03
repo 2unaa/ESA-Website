@@ -23,13 +23,13 @@
                 // Initialize and add the map 
                 function initMap() { 
                     map = new google.maps.Map(document.getElementById('map'), { 
-                        zoom: 20,
+                        zoom: 15,
                         center: {lat: 33.131710, lng: -117.164589 },
                     }); 
                     geocoder = new google.maps.Geocoder();
                     var input = document.getElementById('addressInput');
                     var autocomplete = new google.maps.places.Autocomplete(input);
-                    input.addEventListener('click', geocodeAddress);
+                    //input.addEventListener('click', geocodeAddress);
                 }
 
                 function geocodeAddress(){
