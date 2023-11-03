@@ -21,7 +21,7 @@
             var map; 
             var geocoder; 
             var petStoreMarkers = []; //for the markers of the pet stores
-            var prevMarker; //stores the previous marker
+            var prevMarker; //stores the previous marker (to track whether they entered a 2nd or more address)
 
                 // Initialize and add the map 
                 function initMap() { 
@@ -87,7 +87,7 @@
         }
         //function to clear the petstore markers of default address
         function clearPetStoreMarkers() {
-            for (var i = 0; i < petStoreMarkers.length; i++) {
+            for (var i = 0; i < petStoreMarkers.length; i++) { //going through each markers
                 petStoreMarkers[i].setMap(null); // Remove pet store markers from the map
             }
             petStoreMarkers = []; // Clear the array
