@@ -1,4 +1,3 @@
-// var apiKey = "AIzaSyDrQSlvSqqCmO1SEnY7EAMpDIbUKC4TI2U";
 var key = config.apiKey;
 var script = document.createElement('script');
 script.src = "https://maps.googleapis.com/maps/api/js?key=" + key +"&libraries=places,geometry&callback=initMap";
