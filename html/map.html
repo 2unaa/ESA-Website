@@ -18,9 +18,10 @@
         <div id ="map">  
 
             <script>
-            var map; //
+            var map; 
             var geocoder; 
             var petStoreMarkers = []; //for the markers of the pet stores
+            var prevMarker; //stores the previous marker
 
                 // Initialize and add the map 
                 function initMap() { 
@@ -36,10 +37,13 @@
                 function findYourPet(){
                     var address = document.getElementById('addressInput').value; //getting the value of the address
                     clearPetStoreMarkers(); //clear the pet store markers from default value
-                    geocoder.geocode({'address' :address}, function(results, status){ //using it here
+                    geocoder.geocode({'address' :address}, function(results, status){ //using it here    
                         if(status === 'OK'){ //if valid
                         map.setCenter(results[0].geometry.location); //move to location
-                        var marker = new google.maps.Marker({ //mark it
+                        if (prevMarker) { //if there is a previous marker
+                        prevMarker.setMap(null); // Remove the previous user-entered address marker
+                    }
+                        prevMarker = new google.maps.Marker({ //mark it
                         map: map,
                         position: results[0].geometry.location,
                         });
@@ -69,6 +73,7 @@
         //function to search for all of them
         function callback(results, status) { 
             if (status == google.maps.places.PlacesServiceStatus.OK) { //if valid
+                clearPetStoreMarkers();
                 for (var i = 0; i < results.length; i++) { //for loop going through how many places
                     var place = results[i]; //get the place
                     var marker = new google.maps.Marker({  //marks it and stores it with parameters
