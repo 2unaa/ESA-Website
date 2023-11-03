@@ -1,0 +1,20 @@
+h1{
+    color:#005b96;
+    text-align: center;
+}
+
+h2{
+    color:#005b96;
+    text-align: center;
+}
+
+#map{
+    height: 400px; 
+    width: 600px;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+body{
+   background-color:#b3cde0;
+}

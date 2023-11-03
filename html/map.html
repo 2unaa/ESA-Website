@@ -1,20 +1,37 @@
-var key = config.apiKey;
-var script = document.createElement('script');
-script.src = "https://maps.googleapis.com/maps/api/js?key=" + key +"&libraries=places,geometry&callback=initMap";
-script.async = true;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESA Map</title>
+    <link rel="stylesheet" type="text/css" href="/css/map.css">
+    
+    <!-- <script src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyDrQSlvSqqCmO1SEnY7EAMpDIbUKC4TI2U&libraries=places,geometry&callback=initMap" async></script> -->
+</head>
+<body>
+    <h1>Adopting or buying your animal support pet.</h1>
 
-var map; 
-var geocoder; 
-var petStoreMarkers = []; //for the markers of the pet stores
-var prevMarker; //stores the previous marker (to track whether they entered a 2nd or more address)
-// Initialize and add the map 
- window.initMap =function(){ 
-    map = new google.maps.Map(document.getElementById('map'), {  //default map value at csusm
-    zoom: 15,
-    center: {lat: 33.131710, lng: -117.164589 },
-}); 
-    geocoder = new google.maps.Geocoder(); //using geocoder now
-    var input = document.getElementById('addressInput'); //getting the input
+    <h2>Enter an Address:
+    <input type="text" id="addressInput" placeholder="333 S Twin Oaks Valley Rd" autocomplete="on">
+        <button onclick="petFinder()">Find your pet</button>
+        </h2>
+
+        <div id ="map">  
+            
+            <!-- <script>
+            var map; 
+            var geocoder; 
+            var petStoreMarkers = []; //for the markers of the pet stores
+            var prevMarker; //stores the previous marker (to track whether they entered a 2nd or more address)
+
+                // Initialize and add the map 
+                function initMap() { 
+                    map = new google.maps.Map(document.getElementById('map'), {  //default map value at csusm
+                        zoom: 15,
+                        center: {lat: 33.131710, lng: -117.164589 },
+                    }); 
+                    geocoder = new google.maps.Geocoder(); //using geocoder now
+                    var input = document.getElementById('addressInput'); //getting the input
                     var autocomplete = new google.maps.places.Autocomplete(input); //using autocomplete here
                 }
 
@@ -63,12 +80,12 @@ var prevMarker; //stores the previous marker (to track whether they entered a 2n
                 var center = map.getCenter(); //getting the center of the map (location)
                 for (var i = 0; i < results.length; i++) { //for loop going through how many places
                     var place = results[i]; //get the place
-                    if (place.types.includes('pet_store')) { //check the places that include pet store
-                        var distance = google.maps.geometry.spherical.computeDistanceBetween( //get the distance between the location and the pet stores
+                    if (place.types.includes('pet_store')) {
+                        var distance = google.maps.geometry.spherical.computeDistanceBetween(
                             center,
                             place.geometry.location
                         );
-                        if(distance <= 16093.44){ //if its less than 10 miles
+                        if(distance <= 16093.44){ //if its past 10 deal
                         var marker = new google.maps.Marker({  //marks it and stores it with parameters
                             map: map,
                             position: place.geometry.location,
@@ -88,4 +105,11 @@ var prevMarker; //stores the previous marker (to track whether they entered a 2n
             petStoreMarkers = []; // Clear the array
         }
 
-        document.head.appendChild(script);
+        
+            </script>  -->
+        
+        </div>
+        <script type='text/javascript' src='../javascript/config.js'></script>
+        <script src="../javascript/locator.js"></script>
+</body>
+</html>
