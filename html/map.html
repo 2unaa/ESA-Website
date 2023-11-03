@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESA Map</title>
     <link rel="stylesheet" type="text/css" href="/css/map.css">
-    <script src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyBpjOmBnLrw3wnqVWvpnROPvQp3MSGYXgE&libraries=places&callback=initMap" async></script>
+    
+    <!-- <script src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyDrQSlvSqqCmO1SEnY7EAMpDIbUKC4TI2U&libraries=places,geometry&callback=initMap" async></script> -->
 </head>
 <body>
     <h1>Adopting or buying your animal support pet.</h1>
 
     <h2>Enter an Address:
     <input type="text" id="addressInput" placeholder="333 S Twin Oaks Valley Rd" autocomplete="on">
-        <button onclick="findYourPet()">Find your pet</button>
+        <button onclick="petFinder()">Find your pet</button>
         </h2>
 
         <div id ="map">  
-
-            <script>
+            
+            <!-- <script>
             var map; 
             var geocoder; 
             var petStoreMarkers = []; //for the markers of the pet stores
@@ -33,8 +34,9 @@
                     var input = document.getElementById('addressInput'); //getting the input
                     var autocomplete = new google.maps.places.Autocomplete(input); //using autocomplete here
                 }
+
                 // Moving the map to the user input
-                function findYourPet(){
+                function petFinder(){
                     var address = document.getElementById('addressInput').value; //getting the value of the address
                     clearPetStoreMarkers(); //clear the pet store markers from default value
                     geocoder.geocode({'address' :address}, function(results, status){ //using it here    
@@ -58,30 +60,40 @@
             //searches for pet stores
             function searchPetStores() {
             var location = map.getCenter(); //get the center of it
-            var radius = 5000; // Radius in meters
-            var type = 'pet_store'; //'pet store place'
+            var radius =  16093.44 ; // 10 miles in meters
+            var name = 'Pet Store' //pet store 
 
             var request = { //used to store an object that contains parameters for an API request
                 location: location,
                 radius: radius,
-                type: type
+                name: name
             };
 
             var service = new google.maps.places.PlacesService(map); //using places api
             service.nearbySearch(request, callback); //use nearby search to search for nearby places with pet store 
+
         }
         //function to search for all of them
         function callback(results, status) { 
             if (status == google.maps.places.PlacesServiceStatus.OK) { //if valid
-                clearPetStoreMarkers();
+                clearPetStoreMarkers(); //clearing the previous one
+                var center = map.getCenter(); //getting the center of the map (location)
                 for (var i = 0; i < results.length; i++) { //for loop going through how many places
                     var place = results[i]; //get the place
-                    var marker = new google.maps.Marker({  //marks it and stores it with parameters
-                        map: map,
-                        position: place.geometry.location,
-                        title: place.name
-                    });
+                    if (place.types.includes('pet_store')) {
+                        var distance = google.maps.geometry.spherical.computeDistanceBetween(
+                            center,
+                            place.geometry.location
+                        );
+                        if(distance <= 16093.44){ //if its past 10 deal
+                        var marker = new google.maps.Marker({  //marks it and stores it with parameters
+                            map: map,
+                            position: place.geometry.location,
+                            title: place.name
+                        });
                     petStoreMarkers.push(marker); //store it
+                        }
+                    }
                 }
             }
         }
@@ -93,8 +105,11 @@
             petStoreMarkers = []; // Clear the array
         }
 
-        //function called when user hits submit so it calls the geocode and search
-            </script> 
+        
+            </script>  -->
+        
         </div>
+        <script type='text/javascript' src='../javascript/config.js'></script>
+        <script src="../javascript/locator.js"></script>
 </body>
 </html>
