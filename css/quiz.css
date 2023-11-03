@@ -1,3 +1,11 @@
 .question{
     font-size: 2em;
 }
+
+.quiz-container{
+    display: none;
+}
+
+#question1{
+    display: block;
+}
