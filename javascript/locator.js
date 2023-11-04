@@ -6,17 +6,36 @@ script.async = true;
 var map; 
 var geocoder; 
 var petStoreMarkers = []; //for the markers of the pet stores
-var prevMarker; //stores the previous marker (to track whether they entered a 2nd or more address)
+var prevMarker; //stores the previous marker (to track whether they entered a 2nd or more address
+var petCustomMarkerIcon;
+var homeCustomMarkerIcon;
+var autocomplete;
+
 // Initialize and add the map 
  window.initMap =function(){ 
     map = new google.maps.Map(document.getElementById('map'), {  //default map value at csusm
-    zoom: 15,
+    zoom: 13,
     center: {lat: 33.131710, lng: -117.164589 },
 }); 
     geocoder = new google.maps.Geocoder(); //using geocoder now
+
+    petCustomMarkerIcon = { //variable for the custom marker
+        url: '/images/pawPin.png', // Path to your custom PNG image
+        size: new google.maps.Size(52, 58), // Size of the image
+        origin: new google.maps.Point(0, 0), // Origin of the image (usually 0,0)
+        anchor: new google.maps.Point(24, 48) // Anchor point (center of the image)
+    };
+    homeCustomMarkerIcon = { //variable for the custom marker
+        url: '/images/whitePin.png', // Path to your custom PNG image
+        size: new google.maps.Size(50, 58), // Size of the image
+        origin: new google.maps.Point(0, 0), // Origin of the image (usually 0,0)
+        anchor: new google.maps.Point(24, 48) // Anchor point (center of the image)
+    };
+
     var input = document.getElementById('addressInput'); //getting the input
-                    var autocomplete = new google.maps.places.Autocomplete(input); //using autocomplete here
-                }
+    autocomplete = new google.maps.places.Autocomplete(input); //using autocomplete here
+    
+}
 
                 // Moving the map to the user input
                 function petFinder(){
@@ -31,6 +50,7 @@ var prevMarker; //stores the previous marker (to track whether they entered a 2n
                         prevMarker = new google.maps.Marker({ //mark it
                         map: map,
                         position: results[0].geometry.location,
+                        icon: homeCustomMarkerIcon
                         });
                     }
                     else{ //if not valid
@@ -58,23 +78,24 @@ var prevMarker; //stores the previous marker (to track whether they entered a 2n
         }
         //function to search for all of them
         function callback(results, status) { 
+            clearPetStoreMarkers(); //clearing the previous one
             if (status == google.maps.places.PlacesServiceStatus.OK) { //if valid
-                clearPetStoreMarkers(); //clearing the previous one
                 var center = map.getCenter(); //getting the center of the map (location)
                 for (var i = 0; i < results.length; i++) { //for loop going through how many places
                     var place = results[i]; //get the place
                     if (place.types.includes('pet_store')) { //check the places that include pet store
-                        var distance = google.maps.geometry.spherical.computeDistanceBetween( //get the distance between the location and the pet stores
+                            var distance = google.maps.geometry.spherical.computeDistanceBetween( //get the distance between the location and the pet stores
                             center,
                             place.geometry.location
-                        );
+                            );
                         if(distance <= 16093.44){ //if its less than 10 miles
-                        var marker = new google.maps.Marker({  //marks it and stores it with parameters
+                            var marker = new google.maps.Marker({  //marks it and stores it with parameters
                             map: map,
                             position: place.geometry.location,
-                            title: place.name
-                        });
-                    petStoreMarkers.push(marker); //store it
+                            title: place.name,
+                            icon: petCustomMarkerIcon
+                            });
+                        petStoreMarkers.push(marker); //store it
                         }
                     }
                 }
