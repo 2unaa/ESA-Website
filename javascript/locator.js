@@ -1,6 +1,5 @@
-var key = config.apiKey; //hiding the api key
 var script = document.createElement('script');
-script.src = "https://maps.googleapis.com/maps/api/js?key=" + key +"&libraries=places,geometry&callback=initMap"; //calling the api key
+script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDrQSlvSqqCmO1SEnY7EAMpDIbUKC4TI2U&libraries=places,geometry&callback=initMap"; //calling the api key
 script.async = true;
 
 //some variables to use
