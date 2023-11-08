@@ -3,13 +3,62 @@
 }
 
 .leftMain{
+    float: left; 
+    width: 25%; 
+}
 
+.leftMainTop{
+    display: block;
+    height: 250px;
+    outline: 1px solid;
+}
+
+.leftMainBottom{
+    display: block;
+    height: 250px;
+    outline: 1px solid;
 }
 
 .centerMain{
-
+    float: left; 
+    width: 50%; 
+    height: 500px; 
+    outline: 1px solid
 }
 
 .rightMain{
+    float: right; 
+    width: 25%; 
+}
 
+.rightMainTop{
+    display: block;
+    height: 250px;
+    outline: 1px solid;
+}
+
+.quizButtonSetup{
+    text-align: center;
+    padding: 25% 35%;
+    font-size: 20px;
+}
+
+.quizButton{
+    font-size: 25px;
+}
+
+.button{
+    font-size: 250px;
+}
+
+.rightMainBottom{
+    display: block;
+    height: 250px;
+    outline: 1px solid;
+}
+
+.promptTitle{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
 }
