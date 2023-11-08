@@ -1,12 +1,42 @@
-/* .dog{
-    margin-left: auto;
-    margin-right: auto;
+/* text box */
+
+.text-box-animal {
+    color: rgb(255, 255, 255);
+}
+
+.box-animal{
+    position: absolute;
+    background-color:#6497b1;
+    width: 230px; 
+    height: 480px; 
+    padding-left: 28px;
+    left: 80%;
+}
+
+#box-dog{
     display: block;
-    margin-top: 70px;
-    border: 18px solid;
-    border-style: outset;
-    border-color: #005b96;
-} */
+}
+
+#box-cat{
+    display: none;
+}
+
+#box-rabbit{
+    display: none;
+}
+
+#box-parrot{
+    display: none;
+}
+
+#box-gp{
+    display: none;
+}
+
+
+
+
+/* sliders */
 
 body{
     margin: 0;
@@ -15,7 +45,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(36, 179, 255);
+    background: #b3cde0;
 }
 
 .slider{
@@ -51,7 +81,7 @@ body{
 
 .navigation-manual{
     position: absolute;
-    width:800px;
+    width: 800px;
     margin-top: -40px;
     display: flex;
     justify-content: center;
@@ -70,22 +100,66 @@ body{
 }
 
 .manual-button:hover{
-    background: rgb(44, 44, 44);
+    background: rgb(0, 0, 0);
 }
 
-#radio1:checked ~.first{
+#dog-radio:checked ~.first{
     margin-left: 0;
+    background: rgb(0, 0, 0);
 }
 
-#radio2:checked ~.first{
+#cat-radio:checked ~.first{
     margin-left: -20%;
 }
 
-#radio3:checked ~.first{
+#rabbit-radio:checked ~.first{
     margin-left: -40%;
 }
 
-#radio4:checked ~.first{
+#parrot-radio:checked ~.first{
     margin-left: -60%;
+}
+
+#gp-radio:checked ~.first{
+    margin-left: -80%;
+}
+
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: -40px;
+}
+
+.navigation-auto div{
+    border:2px solid rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#dog-radio:checked ~ .navigation-auto .auto-button1{
+    background: black;
+}
+
+#cat-radio:checked ~ .navigation-auto .auto-button2{
+    background: black;
+}
+
+#rabbit-radio:checked ~ .navigation-auto .auto-button3{
+    background: black;
+}
+
+#parrot-radio:checked ~ .navigation-auto .auto-button4{
+    background: black;
+}
+
+#gp-radio:checked ~ .navigation-auto .auto-button5{
+    background: black;
 }
 
