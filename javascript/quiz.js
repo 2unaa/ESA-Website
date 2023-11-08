@@ -1,7 +1,6 @@
 var answerInputs = document.querySelectorAll(".answers-container input");
 
 for(var i = 0; i < answerInputs.length; i++){
-    // alert(qNum);
     let answers = answerInputs[i];
     
     answers.addEventListener("click",function(){

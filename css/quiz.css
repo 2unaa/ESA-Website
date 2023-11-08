@@ -24,6 +24,9 @@ form{
 
 .quiz-container{
     display: none;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .questions-container{
