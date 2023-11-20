@@ -6,11 +6,12 @@
 
 .box-animal{
     position: absolute;
-    background-color:#6497b1;
-    width: 230px; 
-    height: 480px; 
-    padding-left: 28px;
-    left: 80%;
+    background-color:#005b96;
+    width: 230px;
+    height: 480px;
+    padding-left: 20px;
+    padding-right: 20px;
+    left: 79.5%;
 }
 
 #box-dog{
@@ -88,7 +89,7 @@ body{
 }
 
 .manual-button{
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid #005b96;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
@@ -105,7 +106,7 @@ body{
 
 #dog-radio:checked ~.first{
     margin-left: 0;
-    background: rgb(0, 0, 0);
+    background: #005b96;
 }
 
 #cat-radio:checked ~.first{
@@ -133,7 +134,7 @@ body{
 }
 
 .navigation-auto div{
-    border:2px solid rgb(0, 0, 0);
+    border:2px solid #005b96;;
     padding: 5px;
     border-radius: 10px;
     transition: 1s;
@@ -144,23 +145,23 @@ body{
 }
 
 #dog-radio:checked ~ .navigation-auto .auto-button1{
-    background: black;
+    background: #005b96;
 }
 
 #cat-radio:checked ~ .navigation-auto .auto-button2{
-    background: black;
+    background: #005b96;
 }
 
 #rabbit-radio:checked ~ .navigation-auto .auto-button3{
-    background: black;
+    background: #005b96;
 }
 
 #parrot-radio:checked ~ .navigation-auto .auto-button4{
-    background: black;
+    background: #005b96;
 }
 
 #gp-radio:checked ~ .navigation-auto .auto-button5{
-    background: black;
+    background: #005b96;
 }
 
 /* tuan navigation functions */
