@@ -62,17 +62,31 @@ function petFinder(){
 //searches for pet stores
 function searchPetStores() {
     var location = map.getCenter(); //get the center of it
-    var radius =  16093.44 ; // 10 miles in meters
-    var name = 'Pet Store' //pet store 
-    var request = { //used to store an object that contains parameters for an API request
+    var radius =  15000 ; // around 15 mile radius
+
+    var petStoreRequest = { //used to store an object that contains parameters for an API request
         location: location,
         radius: radius,
-        name: name
+        name: 'Pet Store'
+    };
+
+    var petSupplyRequest = {
+        location: location,
+        radius: radius,
+        name: 'Pet Supply store'
     };
 
     var service = new google.maps.places.PlacesService(map); //using places api
-    service.nearbySearch(request, callback); //use nearby search to search for nearby places with pet store 
+    
+    //search nearby places with pet store tag
+    service.nearbySearch(petStoreRequest, function(petStoreResults, petStoreStatus){
+        callback(petStoreResults, petStoreStatus)
+    });
 
+    //search nearby places with pet store tag
+    service.nearbySearch(petSupplyRequest, function(petSupplyResults, petSupplyStatus){
+        callback(petSupplyResults, petSupplyStatus)
+        });
 }
 
 //callback function
@@ -82,12 +96,6 @@ function callback(results, status) {
         var center = map.getCenter(); //getting the center of the map (location)
         for (var i = 0; i < results.length; i++) { //for loop going through how many places
             var place = results[i]; //get the place
-            if (place.types.includes('pet_store')) { //check the places that include pet store
-                var distance = google.maps.geometry.spherical.computeDistanceBetween( //get the distance between the location and the pet stores
-                    center,
-                    place.geometry.location
-                );
-                if(distance <= 16093.44){ //if its less than 10 miles
                     var marker = new google.maps.Marker({  //marks it and stores it with parameters
                         map: map,
                         position: place.geometry.location,
@@ -98,8 +106,6 @@ function callback(results, status) {
                 }
             }
         }
-    }
-}
 
 //function to clear the petstore markers of default address
 function clearPetStoreMarkers() {

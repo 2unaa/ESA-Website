@@ -1,0 +1,165 @@
+/* text box */
+
+.text-box-animal {
+    color: rgb(255, 255, 255);
+}
+
+.box-animal{
+    position: absolute;
+    background-color:#6497b1;
+    width: 230px; 
+    height: 480px; 
+    padding-left: 28px;
+    left: 80%;
+}
+
+#box-dog{
+    display: block;
+}
+
+#box-cat{
+    display: none;
+}
+
+#box-rabbit{
+    display: none;
+}
+
+#box-parrot{
+    display: none;
+}
+
+#box-gp{
+    display: none;
+}
+
+
+
+
+/* sliders */
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #b3cde0;
+}
+
+.slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+
+}
+
+.slides input{
+    display: none;
+
+}
+
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img{
+    width: 800px;
+    transition: 500px;
+}
+
+/* css for manual slide navigation */
+
+.navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-button{
+    border: 2px solid rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-button:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-button:hover{
+    background: rgb(0, 0, 0);
+}
+
+#dog-radio:checked ~.first{
+    margin-left: 0;
+    background: rgb(0, 0, 0);
+}
+
+#cat-radio:checked ~.first{
+    margin-left: -20%;
+}
+
+#rabbit-radio:checked ~.first{
+    margin-left: -40%;
+}
+
+#parrot-radio:checked ~.first{
+    margin-left: -60%;
+}
+
+#gp-radio:checked ~.first{
+    margin-left: -80%;
+}
+
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: -40px;
+}
+
+.navigation-auto div{
+    border:2px solid rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#dog-radio:checked ~ .navigation-auto .auto-button1{
+    background: black;
+}
+
+#cat-radio:checked ~ .navigation-auto .auto-button2{
+    background: black;
+}
+
+#rabbit-radio:checked ~ .navigation-auto .auto-button3{
+    background: black;
+}
+
+#parrot-radio:checked ~ .navigation-auto .auto-button4{
+    background: black;
+}
+
+#gp-radio:checked ~ .navigation-auto .auto-button5{
+    background: black;
+}
+
