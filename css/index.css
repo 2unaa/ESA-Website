@@ -15,7 +15,7 @@ body{
     display: flex;
     align-items: center;
     height: 250px;
-    outline: 1px solid;
+    /* outline: 1px solid; */
 }
 
 .leftTopInner a {
@@ -27,7 +27,7 @@ body{
     display: flex;
     align-items: center;
     height: 250px;
-    outline: 1px solid;
+    /* outline: 1px solid; */
 }
 
 .leftBotInner a {
@@ -39,7 +39,7 @@ body{
     float: left; 
     width: 50%; 
     height: 500px; 
-    outline: 1px solid
+    /* outline: 1px solid */
 }
 
 .petPhoto{
@@ -57,22 +57,7 @@ body{
 .rightMainTop{
     display: block;
     height: 250px;
-    outline: 1px solid;
-}
-
-.quizButtonSetup{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-}
-
-.quizButton{
-    font-size: 2.5vw;
-    width: 100%;
+    /* outline: 1px solid; */
 }
 
 .rightMainBottom{
@@ -85,6 +70,20 @@ body{
     text-align: center;
     font-size: 25px;
     font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.prompt{
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.quizButton{
+    font-size: 2.5vw;
+    width: 80%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sectionTitle{
