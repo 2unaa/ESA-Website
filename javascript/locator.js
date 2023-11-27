@@ -20,13 +20,13 @@ window.initMap =function(){
     geocoder = new google.maps.Geocoder(); //using geocoder now
 
     petCustomMarkerIcon = { //variable for the custom marker
-        url: '/images/pawPin.png', // Path to your custom PNG image
+        url: '/assets/mapAssets/pawPin.png', // Path to your custom PNG image
         size: new google.maps.Size(52, 58), // Size of the image
         origin: new google.maps.Point(0, 0), // Origin of the image (usually 0,0)
         anchor: new google.maps.Point(24, 48) // Anchor point (center of the image)
     };
     homeCustomMarkerIcon = { //variable for the custom marker
-        url: '/images/whitePin.png', // Path to your custom PNG image
+        url: '/assets/mapAssets/whitePin.png', // Path to your custom PNG image
         size: new google.maps.Size(50, 58), // Size of the image
         origin: new google.maps.Point(0, 0), // Origin of the image (usually 0,0)
         anchor: new google.maps.Point(24, 48) // Anchor point (center of the image)
