@@ -26,11 +26,18 @@ body{
     left: 0;
     height: 100%;
     background-color: #011f4b;
-    font-size: 1.2em;
+    font-size: 1.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+#navigation img {
+    max-width: 130%;
+    height: auto;
+    margin-bottom: 80px; 
 }
 
 #navigation a {
