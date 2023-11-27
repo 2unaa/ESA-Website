@@ -1,5 +1,6 @@
 body{
     background-color: #b3cde0;
+    color: #011f4b;
 }
 
 #navigation {
@@ -26,6 +27,18 @@ body{
 
 #navigation a:hover {
     text-decoration: underline;
+}
+
+#quiz-title{
+    width: 60%;
+    margin: auto;
+
+    text-align: center;
+
+    font-size: 3em;
+
+    padding-top: 50px;
+    padding-bottom: 30px;
 }
 
 form{
@@ -66,7 +79,6 @@ form{
 
 #question1{
     display: block;
-    margin-top: 60px;
 }
 
 .answers-container{
@@ -75,4 +87,6 @@ form{
     display: grid;
     grid-template-columns: 10% 40% 10% 40%;
     width: 70%;
+
+    font-size: 1.3em;
 }
