@@ -7,40 +7,104 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Emotional Support Meow Meow</h1>
+    <h1>Emotional Support Meow Meow Bark Bark</h1>
     
     <div class="main">
         <div class="leftMain">
-            <div>
-            <a href="/html/map.html">Link to this and that</a>
+            <div class="leftMainTop">
+                <img src="/images/dogBath.jpg" class="doggy" alt="pet" height="160px">
+                <div class="leftTopInner" style="text-align:center; width:80%; margin-left:auto; margin-right:auto;">
+                    
+                    <a href="link">Click for more information about pets</a>
+                </div>
             </div>
 
             <div class="leftMainBottom">
-                <a href="link">Link to this and that</a>
-
+                <div class="leftBotInner" style="text-align:center; width:80%; margin-left:auto; margin-right:auto;">
+                    <a href="html/map.html">Click to locate pet stores within your area</a>
+                </div>
+                <img src="/images/catStare.jpg" class="doggy" alt="pet" height="160px">
             </div>
         </div>
 
         <div class="centerMain">
-            <img src="./assets/pet.jpg" alt="pet" height="500px">
-
+            <img src="/assets/pet.jpg" class="petPhoto" alt="pet" height="500px">
         </div>
 
         <div class="rightMain">
             <div class="rightMainTop">
-                <div class="quizButtonSetup">
-                    <button class="quizButton"> QUIZ BUTTON</button>
+                <div class="promptTitle"> Why you should take the quiz</div>
+                <div class="prompt"> 
+                        Taking a quiz to identify the ideal emotional support animal
+                        offers personalized recommendations based on lifestyle, preferences,
+                        and emotional needs. This ensures a well-suited companion, promotes
+                        emotional well-being, addresses legal considerations, and factors in 
+                        practical aspects like allergies and living arrangements, making the 
+                        process of choosing an emotional support animal thoughtful and informed.
                 </div>
+                <div><button class="quizButton" onclick="redirectToLink()">QUIZ BUTTON</button></div>
             </div>
 
             <div class="rightMainBottom">
-                <div class="promptTitle"> Take the quiz</div>
-                <div class="prompt"> Loren ipsum tuberculosis </div>
+                
             </div>
         </div>
         
     </div>
-
+    <div>
+        <div class="sectionTitle">Why An Emotional Support Animal?</div>
+        <div>
+            <p id="sectionBody">
+                Emotional support animals are more than just pets; 
+                they can be invaluable companions that offer emotional 
+                comfort and support. The benefits of having an emotional support 
+                animal are numerous and have been recognized by many individuals 
+                who have experienced an improvement in their mental and 
+                emotional well-being.Before considering an emotional support animal,
+                 it's essential to consult with a mental health professional 
+                who can assess your specific needs and determine if having
+                 an emotional support animal is a suitable option for you. 
+                 They can also provide the necessary documentation for obtaining 
+                 an emotional support animal if it aligns with your therapeutic plan.
+            </p>
+            <ul id="sectionList">
+                <li>
+                    Companionship: Emotianl support animalss provide constant companionship,
+                     reducing feelings of loneliness and isolation. Having a furry friend by 
+                     your side can make a significant difference in your daily life.
+                </li>
+                <li>
+                    Stress Reduction: Interacting with an emotional support animal has 
+                    been shown to lower stress levels and promote a sense of calm. 
+                    The simple act of petting an animal can release endorphins, 
+                    contributing to a more relaxed state of mind.
+                </li>
+                <li>
+                    Routine and Structure: Caring for an emotional support animal often 
+                    involves establishing routines for feeding, exercise, and playtime. 
+                    This can provide a sense of purpose and structure to your day, which 
+                    is particularly beneficial for those dealing with anxiety or depression.
+                </li>
+                <li>
+                    Social Interaction: Walking a dog or taking your emotional support animal
+                     to pet-friendly places can increase social interactions with others.
+                      This can be a great way to meet new people and foster a sense of community.
+                </li>
+                <li>
+                    Unconditional Love: Animals are known for their unconditional love and acceptance. 
+                    The bond formed with an emotional support animal can be a source of comfort and support
+                     during challenging times.
+                </li>
+            </ul>
+        </div>
+    </div>
 
 </body>
+
+<script>
+    function redirectToLink() {
+        window.location.href = "html/quiz.html";
+    }
+</script>
+
 </html>
