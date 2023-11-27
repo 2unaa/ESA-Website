@@ -1,0 +1,110 @@
+.main{
+    display: flex;
+}
+
+body{
+    background-color:#b3cde0;
+ }
+
+.leftMain{
+    float: left; 
+    width: 25%;
+}
+
+.leftMainTop{
+    display: flex;
+    align-items: center;
+    height: 250px;
+    /* outline: 1px solid; */
+}
+
+.leftTopInner a {
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.leftMainBottom{
+    display: flex;
+    align-items: center;
+    height: 250px;
+    /* outline: 1px solid; */
+}
+
+.leftBotInner a {
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.centerMain{
+    float: left; 
+    width: 50%; 
+    height: 500px; 
+    /* outline: 1px solid */
+}
+
+.petPhoto{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 90%
+}
+
+.rightMain{
+    float: right; 
+    width: 25%; 
+}
+
+.rightMainTop{
+    display: block;
+    height: 250px;
+    /* outline: 1px solid; */
+}
+
+.rightMainBottom{
+    display: block;
+    height: 250px;
+    outline: 1px solid;
+}
+
+.promptTitle{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.prompt{
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.quizButton{
+    font-size: 2.5vw;
+    width: 80%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sectionTitle{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0 ;
+}
+
+#sectionBody{
+    font-size: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#sectionList{
+    font-size: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+li {
+    padding: 10px;
+}
