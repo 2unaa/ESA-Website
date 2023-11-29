@@ -6,12 +6,12 @@ h1{
     background-color: lightblue;
 }
 
-.gayAF{
+/* .gayAF{
     position: absolute;
     top: 63%;
     left: 8%;
-    font-size: 20px;
-}
+    font-size: calc(15px + 0.390625vw);
+} */
 
 body{
     background-color:#b3cde0;
@@ -56,6 +56,7 @@ body{
     display: block;
     align-items: center;
     height: 250px;
+    max-width: 100%;
     /* outline: 1px solid; */
 }
 
@@ -131,4 +132,58 @@ body{
 
 li {
     padding: 10px;
+}
+
+@media screen and (max-width:600px) {
+    
+    h1{
+        background-color: lightblue;
+        font-size: calc(20px + 0.390625vw);
+    }
+
+    .main{
+        display: grid;
+    }
+
+    .leftMain{
+        display: flex;
+        width: 95%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
+
+    .leftMainTop, .leftMainBottom{
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .petto{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width:87%;
+        padding-bottom: 10px;
+    }
+
+    .centerMain{
+        width: 100%;
+    }
+
+    .petPhoto{
+        height: 75%;
+    }
+
+    .rightMain{
+        width: 100%;
+    }
+
+
+    .promptTitle , .prompt, .quizButton{
+        font-size: calc(18px + 0.390625vw);
+    }
+
 }
