@@ -17,6 +17,7 @@
     
     <div id="navigation">
       
+        <img src="/assets/ESA logo.png" alt="ESA Logo">
         <a href="../index.html">Homepage</a>
         <a href="infopage.html">InfoPage</a>
         <a href="map.html">Map</a>
