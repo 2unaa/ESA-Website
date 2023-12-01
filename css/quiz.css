@@ -32,11 +32,11 @@ body{
 #quiz-title{
     width: 60%;
     margin: auto;
-
+    
     text-align: center;
-
+    
     font-size: 3em;
-
+    
     padding-top: 50px;
     padding-bottom: 30px;
 }
@@ -44,7 +44,7 @@ body{
 form{
     width: 60%;
     margin: auto;
-
+    
     text-align: center;
 }
 
@@ -57,7 +57,7 @@ form{
 
 .quiz-container{
     display: none;
-
+    
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -87,6 +87,18 @@ form{
     display: grid;
     grid-template-columns: 10% 40% 10% 40%;
     width: 70%;
-
+    
     font-size: 1.3em;
+}
+
+#submit{
+    display: none;
+    padding: 5px;
+    font-size: 2em;
+    margin: auto;
+
+    background-color: #011f4b;
+    color: white;
+
+    border-radius: 10%;
 }
