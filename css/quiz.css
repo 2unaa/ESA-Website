@@ -102,3 +102,9 @@ form{
 
     border-radius: 10%;
 }
+
+#navigation img {
+    max-width: 130%;
+    height: auto;
+    margin-bottom: 80px; 
+}

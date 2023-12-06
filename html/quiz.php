@@ -17,7 +17,7 @@
     
     <div id="navigation">
       
-        <img src="/assets/ESA logo.png" alt="ESA Logo">
+        <img src="../assets/ESA logo.png" alt="ESA Logo">
         <a href="../index.html">Homepage</a>
         <a href="infopage.html">InfoPage</a>
         <a href="map.html">Map</a>
@@ -251,18 +251,22 @@
         }
 
         $pdo = null;
+    
+    
+    
     ?>
-    <div id="winner-container" style="display:<?=$display?>; width:60%; margin:auto; text-align:center; font-size:3em">
-        <div id="winner-words"style="padding: 20px">The animal for you is....</div>
-        <img id="winner-image" style="padding: 20px" src="../assets/quizAssets/winners/<?=$max?>.jpg" height="300px" width="300px">
+
+    <div id='winner-container' style='display:<?=$display?>; width:60%; margin:auto; text-align:center; font-size:3em'>
+        <div id='winner-words'style='padding: 20px'>The animal for you is....</div>
+        <img id='winner-image' style='padding: 20px' src='../assets/quizAssets/winners/<?=$max?>.jpg' height='300px' width='300px'>
     </div>
-    
-    
-    <div id="cute-pictures">
-        <img src="../assets/quizAssets/catanddog.jpg" alt="dog cat picture" height="200px" width="200px">
-        <img src="../assets/quizAssets/rabbitandguinea.jpg" alt="dog cat picture" height="200px" width="200px">
-        <img src="../assets/quizAssets/parrot.jpg" alt="dog cat picture" height="200px" width="200px">
+
+   <div id='cute-pictures'>
+        <img src='../assets/quizAssets/catanddog.jpg' alt='dog cat picture' height='200px' width='200px'>
+        <img src='../assets/quizAssets/rabbitandguinea.jpg' alt='dog cat picture' height='200px' width='200px'>
+        <img src='../assets/quizAssets/parrot.jpg' alt='dog cat picture' height='200px' width='200px'>
     </div>
+
 
 
 
